@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeLeaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration form</title>
+</head>
+<body>
+  <form th:action="@{/RegisterSucc}" method="post" th:object="${frm}">
+    Name: <input type="text" th:field="*{name}"/><br>
+    Email: <input type="email" th:field="*{email}"/><br>
+    Password: <input type="password"/><br> 
+    DOB: <input type="date" th:field="*{dob}"/><br>
+    Gender: <input type="radio" th:field="*{gender}" value="Male"/>Male
+    <input type="radio" th:field="*{gender}" value="Female"/>Female<br>
+    Dishes: <input type="checkbox" th:field="*{dishes}" value="Mutton Briyani"/>Mutton Briyani
+    <input type="checkbox" th:field="*{dishes}" value="Chicken tikka"/>Chicken tikka
+    <input type="checkbox" th:field="*{dishes}" value="Tandoori"/>Tandoori
+    <input type="checkbox" th:field="*{dishes}" value="Chettinadu"/>Chettinadu
+    <input type="checkbox" th:field="*{dishes}" value="Butter Chicken"/>Butter Chicken<br>
+    Feedback: <textarea th:field="*{feedback}"></textarea><br>
+    Location: <input type="text" th:field="*{location}"/><br>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
